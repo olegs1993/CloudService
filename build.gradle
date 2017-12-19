@@ -1,8 +1,8 @@
 group 'com.surkov.cloudservice'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-
+//apply plugin: 'java'
+apply plugin: 'war'
 sourceCompatibility = 1.8
 
 repositories {
@@ -19,4 +19,12 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-orm', version: '4.2.9.RELEASE'
     compile group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '8.0.33'
     compile group: 'com.google.guava', name: 'guava', version: '18.0'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.2.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.2.9.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.10'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5', version: '2.8.10'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.8.10'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'org.mapstruct', name: 'mapstruct-jdk8', version: '1.2.0.Final'
+    compile 'org.mapstruct:mapstruct-processor:1.2.0.Final'
 }

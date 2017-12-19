@@ -3,3 +3,5 @@ target/
 /git/nbproject
 /.idea/
 *.iml
+build/
+out/

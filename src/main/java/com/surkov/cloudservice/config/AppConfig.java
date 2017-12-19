@@ -1,14 +1,13 @@
 package com.surkov.cloudservice.config;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.context.annotation.Import;
 
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.util.Properties;
 
 @Configuration
+@Import(DbConfig.class)
+@ComponentScan(basePackages = "com.surkov.cloudservice")
 public class AppConfig {
 
 }

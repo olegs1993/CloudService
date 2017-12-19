@@ -11,10 +11,6 @@ public class Folder {
     @Column(name = "Folder_Id")
     private Long folderId;
 
-    @OneToOne
-    @JoinColumn(referencedColumnName = "Folder_Id",table = "folder",name = "Folder_Id")
-    private Folder parentId;
-
     @Column(name = "Name")
     private String name;
 
@@ -24,13 +20,9 @@ public class Folder {
     @OneToOne(mappedBy = "rootFolder")
     private Directory directory;
 
-    public Folder getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Folder parentId) {
-        this.parentId = parentId;
-    }
+    @OneToMany
+    @JoinColumn(referencedColumnName = "Folder_Id",table = "folder",name = "Parent_Id")
+    private List<Folder> folderList;
 
     public List<File> getFiles() {
         return files;
@@ -62,5 +54,13 @@ public class Folder {
 
     public void setDirectory(Directory directory) {
         this.directory = directory;
+    }
+
+    public List<Folder> getFolderList() {
+        return folderList;
+    }
+
+    public void setFolderList(List<Folder> folderList) {
+        this.folderList = folderList;
     }
 }
