@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainScreenController {
+
     @Autowired
     ContentPreparationService contentPreparationService;
 
     @RequestMapping(value = "/folder/{folderId}")
     @ResponseBody
-    public ContentOutputDtoList getFolder(@PathVariable("folderId") Long folderId) {
+    public ContentOutputDtoList getContent(@PathVariable("folderId") Long folderId) {
 
         return contentPreparationService.prepareContent(folderId);
     }
