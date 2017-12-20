@@ -1,14 +1,17 @@
 package com.surkov.cloudservice.service;
 
+
+import com.surkov.cloudservice.dto.FolderInputDto;
 import com.surkov.cloudservice.dto.FolderOutputDto;
-import com.surkov.cloudservice.dto.FolderParamDto;
-import com.surkov.cloudservice.dto.ListFolderOutputDto;
+import com.surkov.cloudservice.model.Folder;
+
+import java.util.List;
 
 public interface FolderService {
 
-    ListFolderOutputDto getFolder(Long folderId);
+    Folder getFolder(Long folderId);
 
-    void createFolder(Long parentId, FolderParamDto folderParamDto);
+    void createFolder(Long parentId, FolderInputDto folderParamDto);
 
     void deleteFolder(Long id);
 }

@@ -1,4 +1,4 @@
 package com.surkov.cloudservice.dto;
 
-public class FolderParamDto {
+public class FolderInputDto {
 }
