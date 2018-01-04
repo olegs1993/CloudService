@@ -22,7 +22,7 @@ public class CommonFolderService implements FolderService {
     }
 
     @Override
-    public void createFolder(Long parentId, FolderInputDto folderInputDto) {
+    public void createFolder(FolderInputDto folderInputDto) {
 
     }
 

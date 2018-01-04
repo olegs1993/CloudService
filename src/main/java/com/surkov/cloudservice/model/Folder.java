@@ -20,8 +20,9 @@ public class Folder {
     @OneToOne(mappedBy = "rootFolder")
     private Directory directory;
 
-    @OneToMany
-    @JoinColumn(referencedColumnName = "Folder_Id",table = "folder",name = "Parent_Id")
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(referencedColumnName = "Folder_Id", table = "folder", name = "Parent_Id")
+
     private List<Folder> folderList;
 
     public List<File> getFiles() {

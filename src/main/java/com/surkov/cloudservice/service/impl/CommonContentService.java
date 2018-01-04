@@ -1,19 +1,17 @@
 package com.surkov.cloudservice.service.impl;
 
-import com.surkov.cloudservice.converter.FileMapper;
-import com.surkov.cloudservice.converter.FolderMapper;
 import com.surkov.cloudservice.dto.ContentOutputDtoList;
+import com.surkov.cloudservice.dto.FolderInputDto;
 import com.surkov.cloudservice.model.Folder;
-import com.surkov.cloudservice.repository.FolderRepository;
-import com.surkov.cloudservice.service.ContentPreparationService;
-import com.surkov.cloudservice.service.FileService;
+import com.surkov.cloudservice.service.ContentService;
 import com.surkov.cloudservice.service.FolderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @Service
-public class CommonContentPreparationService implements ContentPreparationService {
+public class CommonContentService implements ContentService {
 
     @Autowired
     FolderService folderService;
@@ -31,4 +29,17 @@ public class CommonContentPreparationService implements ContentPreparationServic
         contentOutputDtoList.setFileOutputDtoList(fileHelper.prepareFileDtoList(folder));
         return contentOutputDtoList;
     }
+
+    @Override
+    @Transactional
+    public void deleteFolder(Long folderId) {
+        folderService.deleteFolder(folderId);
+    }
+
+    @Override
+    public void createFolder(FolderInputDto folderInputDto) {
+        folderService.createFolder(folderInputDto);
+
+    }
+
 }
