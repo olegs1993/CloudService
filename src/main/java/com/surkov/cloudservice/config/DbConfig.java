@@ -47,7 +47,7 @@ public class DbConfig {
         em.setDataSource(dataSource());
         em.setPackagesToScan("com.surkov.cloudservice.model");
         em.setJpaPropertyMap(ImmutableMap.of("hibernate.formal_sql", "false", "hibernate.use_sql_comments",
-                "false"));
+                "false","hibernate.show_sql","true","hibernate.dialect","org.hibernate.dialect.MySQL5Dialect"));
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 
         em.setJpaVendorAdapter(vendorAdapter);
