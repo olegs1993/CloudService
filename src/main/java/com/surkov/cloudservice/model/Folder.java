@@ -17,12 +17,8 @@ public class Folder {
     @OneToMany(mappedBy = "folder")
     private List<File> files;
 
-    @OneToOne(mappedBy = "rootFolder")
-    private Directory directory;
-
     @OneToMany(cascade = CascadeType.REMOVE)
     @JoinColumn(referencedColumnName = "Folder_Id", table = "folder", name = "Parent_Id")
-
     private List<Folder> folderList;
 
     public List<File> getFiles() {
@@ -47,14 +43,6 @@ public class Folder {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Directory getDirectory() {
-        return directory;
-    }
-
-    public void setDirectory(Directory directory) {
-        this.directory = directory;
     }
 
     public List<Folder> getFolderList() {

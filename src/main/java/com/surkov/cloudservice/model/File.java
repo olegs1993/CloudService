@@ -11,7 +11,7 @@ public class File {
     @Column(name = "File_Id")
     private Long fileId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Folder_Id", referencedColumnName = "Folder_Id")
     private Folder folder;
 

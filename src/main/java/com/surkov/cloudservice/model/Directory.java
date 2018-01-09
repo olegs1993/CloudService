@@ -10,12 +10,11 @@ public class Directory {
     @Column(name = "Directory_Id")
     private Long directoryId;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "Folder_Id", name = "Folder_Id")
     private Folder rootFolder;
 
-
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "User_Id", referencedColumnName = "User_Id")
     private User user;
 
