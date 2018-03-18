@@ -21,7 +21,6 @@ public class MainFolderController {
     @RequestMapping(value = "/{folderId}", method = RequestMethod.GET)
     @ResponseBody
     public ContentOutputDtoList getContent(@PathVariable("folderId") Long folderId) {
-        gg
         return contentService.prepareContent(folderId);
     }
 

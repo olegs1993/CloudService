@@ -13,7 +13,6 @@ public class FirstTest {
         Class<? extends UserRepository> userRepositoryClass=userRepository.getClass();
         Annotation an=userRepositoryClass.getAnnotation(Repository.class);
         an.annotationType();
-        sdsa
         System.out.println(userRepository.findUser(1L).getRole());
     }
 }
