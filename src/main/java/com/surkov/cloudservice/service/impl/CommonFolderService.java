@@ -16,7 +16,6 @@ public class CommonFolderService implements FolderService {
 
 
     @Override
-
     public Folder getFolder(Long folderId) {
         return folderRepository.findFolder(folderId);
     }

@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedElement;
+
 @Controller
 @RequestMapping("/folder")
 public class MainFolderController {
@@ -18,7 +21,6 @@ public class MainFolderController {
     @RequestMapping(value = "/{folderId}", method = RequestMethod.GET)
     @ResponseBody
     public ContentOutputDtoList getContent(@PathVariable("folderId") Long folderId) {
-
         return contentService.prepareContent(folderId);
     }
 
