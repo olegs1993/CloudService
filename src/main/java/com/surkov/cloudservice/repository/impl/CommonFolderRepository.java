@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 public class CommonFolderRepository implements FolderRepository {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public Folder findFolder(Long id) {

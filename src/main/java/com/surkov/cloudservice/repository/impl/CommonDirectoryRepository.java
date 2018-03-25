@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 public class CommonDirectoryRepository implements DirectoryRepository {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public Directory findDirectory(Long id) {

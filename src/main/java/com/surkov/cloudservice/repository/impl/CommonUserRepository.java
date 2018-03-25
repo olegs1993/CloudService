@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 public class CommonUserRepository implements UserRepository {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public User findUser(Long id) {

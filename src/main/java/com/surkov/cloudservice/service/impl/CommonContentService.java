@@ -4,21 +4,24 @@ import com.surkov.cloudservice.dto.ContentOutputDtoList;
 import com.surkov.cloudservice.dto.FolderInputDto;
 import com.surkov.cloudservice.model.Folder;
 import com.surkov.cloudservice.service.ContentService;
+import com.surkov.cloudservice.service.FileService;
 import com.surkov.cloudservice.service.FolderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 @Service
 public class CommonContentService implements ContentService {
 
     @Autowired
-    FolderService folderService;
+    private FolderService folderService;
     @Autowired
-    FolderHelper folderHelper;
+    private FolderHelper folderHelper;
     @Autowired
-    FileHelper fileHelper;
+    private FileHelper fileHelper;
+    @Autowired
+    private FileService fileService;
 
     @Override
     @Transactional
@@ -41,5 +44,12 @@ public class CommonContentService implements ContentService {
         folderService.createFolder(folderInputDto);
 
     }
+
+    @Override
+    @Transactional
+    public FileSystemResource downloadFile(Long fileId) {
+        return fileService.readFile(fileId);
+    }
+
 
 }
